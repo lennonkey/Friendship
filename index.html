@@ -3,69 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Friendship Agreement</title>
+  <title>Court of Friendship</title>
   <style>
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #fff0f5;
-      color: #333;
-      text-align: center;
+      font-family: 'Courier New', monospace;
+      background-color: #f7f7f7;
+      color: #111;
+      padding: 40px;
+    }
+    .courtroom {
+      max-width: 900px;
+      margin: auto;
+      background: white;
       padding: 50px;
+      border: 3px solid black;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h1, h2 {
+      text-align: center;
+      text-transform: uppercase;
     }
     h1 {
-      font-size: 3em;
-      color: #ff69b4;
+      font-size: 2.2em;
+      text-decoration: underline;
     }
-    p {
+    h2 {
+      margin-top: 40px;
       font-size: 1.5em;
+      border-bottom: 1px solid #000;
+      padding-bottom: 5px;
+    }
+    .intro, .clause, .closing {
+      margin-bottom: 25px;
+      font-size: 1.1em;
+      white-space: pre-wrap;
     }
     button {
-      font-size: 1.2em;
-      padding: 10px 20px;
-      margin: 15px;
+      display: block;
+      margin: 40px auto 10px;
+      padding: 12px 30px;
+      font-size: 1em;
+      background-color: #343a40;
+      color: white;
       border: none;
-      border-radius: 12px;
+      border-radius: 4px;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
-    .yes-btn {
-      background-color: #4CAF50;
-      color: white;
+    button:hover {
+      background-color: #212529;
     }
-    .yes-btn:hover {
-      background-color: #45a049;
-    }
-    .no-btn {
-      background-color: #f44336;
-      color: white;
-    }
-    .no-btn:hover {
-      background-color: #da190b;
-    }
-    #response {
+    #verdict {
+      text-align: center;
       margin-top: 30px;
-      font-size: 2em;
-      color: #ff1493;
+      font-size: 1.4em;
+      color: darkgreen;
+      font-weight: bold;
+    }
+    .stamp {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1.5em;
+      color: crimson;
+      font-weight: bold;
+      display: none;
     }
   </style>
 </head>
 <body>
+  <div class="courtroom">
+    <h1>The Court of Eternal Friendship</h1>
+    <div class="intro">
+      Case No. 2025-FRIEND-001  
+      Venue: Court of Eternal Friendship  
+      Date: <script>document.write(new Date().toLocaleDateString());</script>  
 
-  <h1>🤝 Friendship Agreement</h1>
-  <p>Do you agree to be my awesome friend forever?</p>
-  <button class="yes-btn" onclick="sayYay()">Yes 💖</button>
-  <button class="no-btn" onclick="sayNo()">No 😢</button>
+      In the matter of:  
+      The Establishment of a Formal and Binding Friendship Agreement between  
+      Party A (the Initiator) and Party B (the Respondent).
+    </div>
 
-  <div id="response"></div>
+    <h2>Opening Statement</h2>
+    <div class="clause">
+      Let the record show that both parties have expressed an intent to enter into a long-term friendship, rooted in mutual respect, emotional support, and shared memes. The court recognizes this desire and hereby presents the official terms.
+    </div>
+
+    <h2>Terms of Friendship</h2>
+    <div class="clause">
+      1. Both Parties shall respond to each other's messages, even if it's just with "lol" or an emoji.  
+      2. Emotional support must be provided when requested or when visibly needed.  
+      3. Jokes, memes, and random check-ins are to be exchanged regularly.  
+      4. Confidentiality shall be upheld unless it's really funny and you promise not to tell who said it.  
+      5. Annual Friendship Day may be celebrated with virtual high-fives or real-life pizza.
+    </div>
+
+    <h2>Closing Statement</h2>
+    <div class="closing">
+      The Court hereby requests Party B to confirm agreement to the above terms.  
+      If the Party finds these conditions acceptable, they may affirm by clicking the button below.  
+      Upon confirmation, the bond of friendship shall be considered legally binding in the jurisdiction of Good Vibes and Forever Homies.
+    </div>
+
+    <button onclick="declareVerdict()">I Do Solemnly Swear</button>
+
+    <div id="verdict"></div>
+
+    <div class="stamp" id="stamp">
+      🛑 APPROVED & SEALED BY THE FRIENDSHIP COURT 🛑
+    </div>
+  </div>
 
   <script>
-    function sayYay() {
-      document.getElementById("response").innerText = "YAY 🎉 WE BESTIES";
-    }
-    function sayNo() {
-      document.getElementById("response").innerText = "That's okay. I'm still cheering for you 💌";
+    function declareVerdict() {
+      document.getElementById("verdict").innerText = "Let the record reflect: The Respondent has agreed. Friendship is hereby declared!";
+      document.getElementById("stamp").style.display = "block";
     }
   </script>
-
 </body>
 </html>
